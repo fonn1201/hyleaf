@@ -1,11 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
     let path = window.location.pathname.replace(/^\/+|\/+$/g, ''); // Xóa dấu "/" ở đầu & cuối
 
-    // Nếu đường dẫn rỗng, mặc định vào trang chủ
-    if (path === "") path = "index";
+    if (path === "" || path === "index") {
+        path = "index.html";
+    } else {
+        path = "pages/" + path + ".html"; // Thêm pages/ và .html
+    }
 
-    // Đảm bảo GitHub Pages có thể tìm đúng file
-    fetch("pages/" + path + ".html")
+    fetch(path)
         .then(response => {
             if (!response.ok) throw new Error("Không tìm thấy trang");
             return response.text();
