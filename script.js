@@ -22,9 +22,14 @@ document.addEventListener("DOMContentLoaded", function () {
         </footer>
     `;
 
-    // Load nội dung trang theo URL
-    const path = window.location.pathname.replace(/^\/+|\/+$/g, '') || "index";
-    fetch("pages/" + path + ".html")
+    // Xác định đường dẫn trang
+    let path = window.location.pathname.replace(/^\/+|\/+$/g, '');
+    if (path === '' || path === 'index') {
+        return; // Nếu là trang chủ, không cần load nội dung từ thư mục /pages/
+    }
+
+    // Fetch nội dung trang con từ thư mục /pages/
+    fetch("/pages/" + path + ".html")
         .then(response => {
             if (!response.ok) {
                 throw new Error("Trang không tồn tại!");
