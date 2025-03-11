@@ -6,10 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 <a class="navbar-brand" href="/">Hyleaf</a>
                 <ul class="nav">
                     <li><a href="/">Trang chủ</a></li>
-                    <li><a href="/pages/products">Sản phẩm</a></li>
-                    <li><a href="/pages/news">Tin tức</a></li>
-                    <li><a href="/pages/guide">Hướng dẫn</a></li>
-                    <li><a href="/pages/contact">Liên hệ</a></li>
+                    <li><a href="/products">Sản phẩm</a></li>
+                    <li><a href="/news">Tin tức</a></li>
+                    <li><a href="/guide">Hướng dẫn</a></li>
+                    <li><a href="/contact">Liên hệ</a></li>
                 </ul>
             </div>
         </nav>
@@ -22,10 +22,12 @@ document.addEventListener("DOMContentLoaded", function () {
         </footer>
     `;
 
-    // Xác định đường dẫn trang
+    // Xác định đường dẫn trang hiện tại
     let path = window.location.pathname.replace(/^\/+|\/+$/g, '');
+    
+    // ⚠ **Sửa lỗi: Nếu path rỗng hoặc 'index', không cần fetch**
     if (path === '' || path === 'index') {
-        return; // Nếu là trang chủ, không cần load nội dung từ thư mục /pages/
+        return; // Không fetch vì index.html nằm ngoài /pages/
     }
 
     // Fetch nội dung trang con từ thư mục /pages/
