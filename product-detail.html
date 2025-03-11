@@ -3,43 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hyleaf - Chi tiết sản phẩm</title>
+    <title>Chi tiết sản phẩm</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Hyleaf</a>
+            <a class="navbar-brand" href="/">Hyleaf</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="products.html">Sản phẩm</a></li>
-                    <li class="nav-item"><a class="nav-link" href="news.html">Tin tức</a></li>
-                    <li class="nav-item"><a class="nav-link" href="guide.html">Hướng dẫn</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Liên hệ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/products/">Sản phẩm</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Chi tiết sản phẩm -->
-    <section class="container my-5">
-        <h2 class="text-center">Trà Oolong Thượng Hạng</h2>
-        <img src="placeholder.jpg" class="img-fluid mx-auto d-block" alt="Trà Oolong">
-        <p class="text-center mt-3">Hương vị đậm đà, thơm ngon, được chọn lọc từ những lá trà tốt nhất.</p>
-        <div class="text-center">
-            <a href="https://shopee.vn" class="btn btn-success">Mua ngay trên Shopee</a>
-        </div>
-    </section>
+    <div class="container my-5">
+        <h1 id="product-title">Đang tải...</h1>
+        <img id="product-image" src="" class="img-fluid" alt="Hình sản phẩm">
+        <p id="product-description"></p>
+        <a id="product-link" href="#" class="btn btn-primary">Xem trên sàn TMĐT</a>
+    </div>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2025 Hyleaf. All Rights Reserved.</p>
-    </footer>
+    <script>
+        const products = {
+            "oolong-thuong-hang": {
+                title: "Trà Oolong Thượng Hạng",
+                image: "oolong-thuong-hang.jpg",
+                description: "Hương vị đậm đà, thơm ngon.",
+                link: "https://shopee.vn/product/oolong-thuong-hang"
+            },
+            "oolong-dac-biet": {
+                title: "Trà Oolong Đặc Biệt",
+                image: "oolong-dac-biet.jpg",
+                description: "Thơm ngọt, hậu vị kéo dài.",
+                link: "https://shopee.vn/product/oolong-dac-biet"
+            }
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const productKey = urlParams.get("p");
+
+        if (products[productKey]) {
+            document.getElementById("product-title").innerText = products[productKey].title;
+            document.getElementById("product-image").src = products[productKey].image;
+            document.getElementById("product-description").innerText = products[productKey].description;
+            document.getElementById("product-link").href = products[productKey].link;
+        } else {
+            document.getElementById("product-title").innerText = "Sản phẩm không tồn tại!";
+        }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
