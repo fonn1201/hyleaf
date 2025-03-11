@@ -6,10 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 <a class="navbar-brand" href="/">Hyleaf</a>
                 <ul class="nav">
                     <li><a href="/">Trang chủ</a></li>
-                    <li><a href="/products">Sản phẩm</a></li>
-                    <li><a href="/news">Tin tức</a></li>
-                    <li><a href="/guide">Hướng dẫn</a></li>
-                    <li><a href="/contact">Liên hệ</a></li>
+                    <li><a href="/pages/products">Sản phẩm</a></li>
+                    <li><a href="/pages/news">Tin tức</a></li>
+                    <li><a href="/pages/guide">Hướng dẫn</a></li>
+                    <li><a href="/pages/contact">Liên hệ</a></li>
                 </ul>
             </div>
         </nav>
