@@ -2,9 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
     let path = window.location.pathname.replace(/^\/+|\/+$/g, ''); // Xóa dấu "/" ở đầu & cuối
 
     if (path === "" || path === "index") {
-        path = "index.html";
+        path = "index.html";  // Trang chủ
     } else {
-        path = "pages/" + path + ".html"; // Thêm pages/ và .html
+        path = "pages/" + path + ".html"; // Các trang khác
     }
 
     fetch(path)
