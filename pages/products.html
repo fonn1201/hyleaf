@@ -4,20 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hyleaf - Sản phẩm</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <div id="header"></div>
 
-    <div class="container mt-4">
+    <main class="container mt-5">
         <h1 class="text-center">Danh sách sản phẩm</h1>
-        <p class="text-center">Các sản phẩm trà Oolong chất lượng cao.</p>
-    </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Trà Oolong 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Trà Oolong Thượng Hạng</h5>
+                        <p class="card-text">Hương thơm tự nhiên, vị thanh.</p>
+                        <a href="product-detail.html?id=1" class="btn btn-primary">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Trà Oolong 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Trà Oolong Đặc Biệt</h5>
+                        <p class="card-text">Vị đậm đà, hậu ngọt.</p>
+                        <a href="product-detail.html?id=2" class="btn btn-primary">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <div id="footer"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/script.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>

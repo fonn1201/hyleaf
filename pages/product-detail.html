@@ -4,51 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hyleaf - Chi tiết sản phẩm</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <div id="header"></div>
 
-    <div class="container mt-4">
-        <h1 id="product-title" class="text-center">Tên sản phẩm</h1>
-        <p id="product-description" class="text-center">Mô tả sản phẩm sẽ hiển thị ở đây.</p>
-        <div class="text-center">
-            <a id="product-link" href="#" class="btn btn-primary">Mua ngay</a>
-        </div>
-    </div>
+    <main class="container mt-5">
+        <h1 id="product-title" class="text-center"></h1>
+        <img id="product-image" src="" class="img-fluid d-block mx-auto" alt="Sản phẩm">
+        <p id="product-description" class="text-center mt-3"></p>
+    </main>
 
     <div id="footer"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/script.js"></script>
     <script>
-        // Lấy thông tin sản phẩm từ URL
-        const params = new URLSearchParams(window.location.search);
-        const productId = params.get("id");
+        document.addEventListener("DOMContentLoaded", function () {
+            const params = new URLSearchParams(window.location.search);
+            const productId = params.get("id");
 
-        // Danh sách sản phẩm mẫu
-        const products = {
-            "oolong-1": {
-                title: "Trà Oolong Cao Cấp",
-                description: "Hương vị đậm đà, hậu vị ngọt dịu.",
-                link: "https://shopee.vn/oolong-1"
-            },
-            "oolong-2": {
-                title: "Trà Oolong Thượng Hạng",
-                description: "Lá trà tuyển chọn, hương thơm quyến rũ.",
-                link: "https://shopee.vn/oolong-2"
+            const products = {
+                "1": {
+                    title: "Trà Oolong Thượng Hạng",
+                    image: "https://via.placeholder.com/500",
+                    description: "Trà Oolong thượng hạng với hương vị tự nhiên, vị thanh nhẹ."
+                },
+                "2": {
+                    title: "Trà Oolong Đặc Biệt",
+                    image: "https://via.placeholder.com/500",
+                    description: "Trà Oolong đặc biệt với vị đậm đà, hậu ngọt."
+                }
+            };
+
+            if (products[productId]) {
+                document.getElementById("product-title").textContent = products[productId].title;
+                document.getElementById("product-image").src = products[productId].image;
+                document.getElementById("product-description").textContent = products[productId].description;
+            } else {
+                document.querySelector("main").innerHTML = "<h1 class='text-center'>Sản phẩm không tồn tại</h1>";
             }
-        };
-
-        // Cập nhật nội dung trang nếu sản phẩm tồn tại
-        if (products[productId]) {
-            document.getElementById("product-title").textContent = products[productId].title;
-            document.getElementById("product-description").textContent = products[productId].description;
-            document.getElementById("product-link").href = products[productId].link;
-        } else {
-            document.querySelector(".container").innerHTML = "<h2 class='text-center'>Sản phẩm không tồn tại</h2>";
-        }
+        });
     </script>
+    <script src="../script.js"></script>
 </body>
 </html>
