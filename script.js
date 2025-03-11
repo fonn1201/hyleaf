@@ -1,13 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
     let path = window.location.pathname.replace(/^\/+|\/+$/g, ''); // Xóa dấu "/" ở đầu & cuối
-    if (path === "") path = "home"; // Trang mặc định nếu không có đường dẫn cụ thể
+    if (path === "") path = "index"; // Trang mặc định
 
-    loadPage(path);
-});
+    // Nếu chạy trên GitHub Pages, cần thêm đường dẫn repo nếu có
+    let basePath = "/"; // Nếu có repo, sửa thành "/ten-repo/"
 
-// Hàm tải nội dung trang từ thư mục `pages/`
-function loadPage(page) {
-    fetch(`pages/${page}.html`)
+    fetch(basePath + "pages/" + path + ".html")
         .then(response => {
             if (!response.ok) throw new Error("Không tìm thấy trang");
             return response.text();
@@ -18,4 +16,4 @@ function loadPage(page) {
         .catch(() => {
             document.getElementById("content").innerHTML = "<h2>Không tìm thấy trang</h2>";
         });
-}
+});
