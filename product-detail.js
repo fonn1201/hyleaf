@@ -141,3 +141,16 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector("main").innerHTML = "<h1 class='text-center'>Sản phẩm không tồn tại</h1>";
     }
 });
+// Xử lý nút toggle Công dụng
+document.getElementById("toggle-benefits").addEventListener("click", function() {
+    const benefitsList = document.getElementById("product-benefits");
+    benefitsList.classList.toggle("show");
+    this.textContent = benefitsList.classList.contains("show") ? "▼" : "▶";
+});
+
+// Xử lý nút toggle Lợi ích
+document.getElementById("toggle-advantage").addEventListener("click", function() {
+    const advantage = document.getElementById("product-advantage");
+    advantage.classList.toggle("show");
+    this.textContent = advantage.classList.contains("show") ? "▼" : "▶";
+});

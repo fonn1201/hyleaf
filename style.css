@@ -118,3 +118,20 @@ footer {
     font-size: 24px;
     cursor: pointer;
 }
+
+.collapse {
+    display: none;
+}
+
+.collapse.show {
+    display: block;
+}
+
+.btn-link {
+    color: #425827;
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    text-decoration: underline;
+}
