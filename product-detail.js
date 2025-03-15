@@ -99,10 +99,9 @@ document.addEventListener("DOMContentLoaded", function () {
         // Cập nhật tiêu đề
         document.getElementById("product-title").textContent = product.title;
 
-        // Cập nhật hình ảnh
-        const productImagesContainer = document.getElementById("product-images");
-        productImagesContainer.innerHTML = product.images.map(image => `<img src="${image}" alt="Hình ảnh sản phẩm" class="product-image">`).join("");
-
+        // Cập nhật hình ảnh chính
+        const mainImage = document.getElementById("product-image");
+        mainImage.src = product.images[0];
 
         // Cập nhật công dụng
         const benefitsList = document.getElementById("product-benefits");
@@ -112,21 +111,46 @@ document.addEventListener("DOMContentLoaded", function () {
         const advantageList = document.getElementById("product-advantage");
         advantageList.innerHTML = product.advantage.map(adv => `<li>${adv}</li>`).join("");
 
-        // Cập nhật link mua hàng
+        // Cập nhật liên kết mua hàng
         document.getElementById("shopee-link").href = product.links.shopee;
         document.getElementById("tiktok-link").href = product.links.tiktok;
         document.getElementById("lazada-link").href = product.links.lazada;
 
-        // Xử lý toggle collapse cho Công dụng
-        document.getElementById("toggle-benefits").addEventListener("click", function () {
-            benefitsList.classList.toggle("show");
-            this.textContent = benefitsList.classList.contains("show") ? "▼" : "▶";
+        // Hiển thị các hình ảnh thumbnail
+        let currentImageIndex = 0;
+        const thumbnailsContainer = document.getElementById("thumbnail-container");
+        product.images.forEach((img, index) => {
+            const imgElement = document.createElement("img");
+            imgElement.src = img;
+            imgElement.classList.add("thumbnail");
+            imgElement.addEventListener("click", () => {
+                currentImageIndex = index;
+                mainImage.src = img;
+            });
+            thumbnailsContainer.appendChild(imgElement);
         });
 
-        // Xử lý toggle collapse cho Lợi ích
+        // Xử lý chuyển đổi hình ảnh
+        document.getElementById("prev-btn").addEventListener("click", () => {
+            currentImageIndex = (currentImageIndex === 0) ? product.images.length - 1 : currentImageIndex - 1;
+            mainImage.src = product.images[currentImageIndex];
+        });
+
+        document.getElementById("next-btn").addEventListener("click", () => {
+            currentImageIndex = (currentImageIndex === product.images.length - 1) ? 0 : currentImageIndex + 1;
+            mainImage.src = product.images[currentImageIndex];
+        });
+
+        // Toggle collapse/extend cho Công dụng
+        document.getElementById("toggle-benefits").addEventListener("click", function () {
+            benefitsList.classList.toggle("show");
+            this.textContent = benefitsList.classList.contains("show") ? "▼ Thu gọn" : "▶ Xem thêm";
+        });
+
+        // Toggle collapse/extend cho Lợi ích
         document.getElementById("toggle-advantage").addEventListener("click", function () {
             advantageList.classList.toggle("show");
-            this.textContent = advantageList.classList.contains("show") ? "▼" : "▶";
+            this.textContent = advantageList.classList.contains("show") ? "▼ Thu gọn" : "▶ Xem thêm";
         });
     } else {
         document.querySelector("main").innerHTML = "<h1 class='text-center'>Sản phẩm không tồn tại</h1>";
