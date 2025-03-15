@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "Trà Oolong Kim Tuyên",
             images: ["../src/oolongkimtuyen.png", "../src/giaychungnhanVSATTP.png"],
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
-            advantage: "Giúp thanh lọc cơ thể",
+            advantage: ["Thư giãn tinh thần", "Thanh lọc cơ thể"],
             links: {
                 shopee: "#",
                 tiktok: "#",
@@ -142,14 +142,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 // Xử lý nút toggle Công dụng
-document.getElementById("toggle-benefits").addEventListener("click", function() {
+document.getElementById("toggle-benefits").addEventListener("click", function () {
     const benefitsList = document.getElementById("product-benefits");
     benefitsList.classList.toggle("show");
     this.textContent = benefitsList.classList.contains("show") ? "▼" : "▶";
 });
 
 // Xử lý nút toggle Lợi ích
-document.getElementById("toggle-advantage").addEventListener("click", function() {
+document.getElementById("toggle-advantage").addEventListener("click", function () {
     const advantage = document.getElementById("product-advantage");
     advantage.classList.toggle("show");
     this.textContent = advantage.classList.contains("show") ? "▼" : "▶";

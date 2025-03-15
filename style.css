@@ -127,11 +127,12 @@ footer {
     display: block;
 }
 
-.btn-link {
+.toggle-btn {
+    font-size: 1rem;
     color: #425827;
     text-decoration: none;
 }
 
-.btn-link:hover {
-    text-decoration: underline;
+.toggle-btn:hover {
+    text-decoration: none;
 }
