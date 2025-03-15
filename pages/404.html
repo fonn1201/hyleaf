@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyleaf - Lỗi 404</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <script>
+        // Lấy đường dẫn hiện tại
+        var path = window.location.pathname;
+        var search = window.location.search;
+
+        // Chuyển hướng nếu là các trang của Hyleaf
+        if (path.includes("/pages/")) {
+            window.location.replace("/" + path.split('/').pop() + ".html" + search);
+        } else {
+            // Nếu không khớp, chuyển về trang chủ
+            window.location.replace("/");
+        }
+    </script>
+</body>
+</html>
