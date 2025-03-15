@@ -99,6 +99,11 @@ document.addEventListener("DOMContentLoaded", function () {
         // Cập nhật tiêu đề
         document.getElementById("product-title").textContent = product.title;
 
+        // Cập nhật hình ảnh
+        const productImagesContainer = document.getElementById("product-images");
+        productImagesContainer.innerHTML = product.images.map(image => `<img src="${image}" alt="Hình ảnh sản phẩm" class="product-image">`).join("");
+
+
         // Cập nhật công dụng
         const benefitsList = document.getElementById("product-benefits");
         benefitsList.innerHTML = product.benefits.map(benefit => `<li>${benefit}</li>`).join("");
