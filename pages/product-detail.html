@@ -12,9 +12,34 @@
     <div id="header"></div>
 
     <main class="container mt-5">
-        <h1 id="product-title" class="text-center"></h1>
-        <img id="product-image" src="" class="img-fluid d-block mx-auto" alt="Sản phẩm">
-        <p id="product-description" class="text-center mt-3"></p>
+        <h1 id="product-title" class="text-center mb-4"></h1>
+        <div class="row">
+            <!-- Khu vực hình ảnh sản phẩm -->
+            <div class="col-md-6">
+                <div class="text-center">
+                    <button class="btn btn-light" id="prev-btn">&lt;</button>
+                    <img id="product-image" src="" class="img-fluid main-image mx-3" alt="Sản phẩm">
+                    <button class="btn btn-light" id="next-btn">&gt;</button>
+                </div>
+                <div class="d-flex justify-content-center mt-3" id="thumbnail-container"></div>
+            </div>
+
+            <!-- Khu vực thông tin sản phẩm -->
+            <div class="col-md-6">
+                <h5>Công dụng:</h5>
+                <ul id="product-benefits">
+                    <li>Công dụng 1</li>
+                    <li>Công dụng 2</li>
+                </ul>
+                <h5>Lợi ích:</h5>
+                <p id="product-advantage">Lợi ích 1</p>
+                <div class="d-flex justify-content-around mt-4">
+                    <a href="#" class="btn btn-outline-success">Mua trên Shopee</a>
+                    <a href="#" class="btn btn-outline-primary">Mua trên Tiktok Shop</a>
+                    <a href="#" class="btn btn-outline-warning">Mua trên Lazada</a>
+                </div>
+            </div>
+        </div>
     </main>
 
     <div id="footer"></div>
@@ -27,50 +52,65 @@
             const products = {
                 "1": {
                     title: "Trà Oolong Thượng Hạng",
-                    image: "../src/logo.png",
-                    description: "Trà Oolong thượng hạng với hương vị tự nhiên, vị thanh nhẹ."
-                },
-                "2": {
-                    title: "Trà Oolong Đặc Biệt",
-                    image: "../src/logo.png",
-                    description: "Trà Oolong đặc biệt với vị đậm đà, hậu ngọt."
-                },
-                "3": {
-                    title: "Trà Oolong Tứ Quý",
-                    image: "../src/logo.png",
-                    description: "Trà Oolong đặc biệt với vị đậm đà, hậu ngọt."
-                },
-                "4": {
-                    title: "Trà Oolong Thiết Quan Âm",
-                    image: "../src/logo.png",
-                    description: "Trà Oolong đặc biệt với vị đậm đà, hậu ngọt."
-                },
-                "5": {
-                    title: "Trà Oolong Kim Tuyên",
-                    image: "../src/logo.png",
-                    description: "Trà Oolong đặc biệt với vị đậm đà, hậu ngọt."
-                },
-                "6": {
-                    title: "Trà Oolong Lài",
-                    image: "../src/logo.png",
-                    description: "Trà Oolong đặc biệt với vị đậm đà, hậu ngọt."
-                },
-                "7": {
-                    title: "Trà Đen B'Lao",
-                    image: "../src/logo.png",
-                    description: "Trà Oolong đặc biệt với vị đậm đà, hậu ngọt."
+                    images: ["../src/logo.png", "../src/img1.png", "../src/img2.png"],
+                    benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
+                    advantage: "Giúp thanh lọc cơ thể",
+                    links: {
+                        shopee: "#",
+                        tiktok: "#",
+                        lazada: "#"
+                    }
                 }
             };
 
             if (products[productId]) {
-                document.getElementById("product-title").textContent = products[productId].title;
-                document.getElementById("product-image").src = products[productId].image;
-                document.getElementById("product-description").textContent = products[productId].description;
+                const product = products[productId];
+
+                // Cập nhật thông tin sản phẩm
+                document.getElementById("product-title").textContent = product.title;
+                const mainImage = document.getElementById("product-image");
+                mainImage.src = product.images[0];
+
+                // Cập nhật công dụng
+                const benefitsList = document.getElementById("product-benefits");
+                benefitsList.innerHTML = product.benefits.map(benefit => `<li>${benefit}</li>`).join("");
+
+                // Cập nhật lợi ích
+                document.getElementById("product-advantage").textContent = product.advantage;
+
+                // Cập nhật liên kết
+                document.querySelector(".btn-outline-success").href = product.links.shopee;
+                document.querySelector(".btn-outline-primary").href = product.links.tiktok;
+                document.querySelector(".btn-outline-warning").href = product.links.lazada;
+
+                // Xử lý chuyển đổi hình ảnh
+                let currentImageIndex = 0;
+                const thumbnailsContainer = document.getElementById("thumbnail-container");
+
+                product.images.forEach((img, index) => {
+                    const imgElement = document.createElement("img");
+                    imgElement.src = img;
+                    imgElement.classList.add("thumbnail");
+                    imgElement.addEventListener("click", () => {
+                        currentImageIndex = index;
+                        mainImage.src = img;
+                    });
+                    thumbnailsContainer.appendChild(imgElement);
+                });
+
+                document.getElementById("prev-btn").addEventListener("click", () => {
+                    currentImageIndex = (currentImageIndex === 0) ? product.images.length - 1 : currentImageIndex - 1;
+                    mainImage.src = product.images[currentImageIndex];
+                });
+
+                document.getElementById("next-btn").addEventListener("click", () => {
+                    currentImageIndex = (currentImageIndex === product.images.length - 1) ? 0 : currentImageIndex + 1;
+                    mainImage.src = product.images[currentImageIndex];
+                });
             } else {
                 document.querySelector("main").innerHTML = "<h1 class='text-center'>Sản phẩm không tồn tại</h1>";
             }
         });
     </script>
-    <script src="../script.js"></script>
 </body>
 </html>
