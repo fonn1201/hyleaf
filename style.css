@@ -45,7 +45,13 @@ body {
 
 .btn {
     margin-top: auto;
+    color: #2c3d1e;
+    background-color: #f4f4dd;
     /* Đẩy nút xuống cuối */
+}
+.btn:hover{
+    color: #f4f4dd;
+    background-color: #2c3d1e;
 }
 
 /* Màu nền cho header và footer */
