@@ -1,38 +1,62 @@
 body {
     font-family: Arial, sans-serif;
 }
+
 .card {
-    height: 100%; /* Giúp các thẻ card có chiều cao đồng nhất */
+    height: 100%;
+    /* Giúp các thẻ card có chiều cao đồng nhất */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 15px; /* Tạo khoảng cách giữa nội dung và viền */
-  }
-  
-  .card-img-top {
-    max-height: 150px; /* Giới hạn chiều cao hình ảnh */
-    object-fit: contain; /* Đảm bảo hình ảnh không bị méo */
-    margin-bottom: 10px; /* Tạo khoảng cách với tiêu đề */
-  }
-  
-  .card-body {
-    text-align: center; /* Canh giữa nội dung */
-  }
-  
-  .card-title {
-    min-height: 50px; /* Đặt chiều cao tối thiểu để tránh nhảy dòng */
-    font-size: 18px; /* Kích thước chữ */
-    font-weight: bold; /* In đậm tiêu đề */
+    padding: 15px;
+    /* Tạo khoảng cách giữa nội dung và viền */
+}
+
+.card-img-top {
+    max-height: 150px;
+    /* Giới hạn chiều cao hình ảnh */
+    object-fit: contain;
+    /* Đảm bảo hình ảnh không bị méo */
     margin-bottom: 10px;
-  }
-  
-  .card-text {
-    min-height: 40px; /* Đảm bảo mô tả không bị ngắn */
+    /* Tạo khoảng cách với tiêu đề */
+}
+
+.card-body {
+    text-align: center;
+    /* Canh giữa nội dung */
+}
+
+.card-title {
+    min-height: 50px;
+    /* Đặt chiều cao tối thiểu để tránh nhảy dòng */
+    font-size: 18px;
+    /* Kích thước chữ */
+    font-weight: bold;
+    /* In đậm tiêu đề */
+    margin-bottom: 10px;
+}
+
+.card-text {
+    min-height: 40px;
+    /* Đảm bảo mô tả không bị ngắn */
     font-size: 14px;
     color: #555;
-  }
-  
-  .btn {
-    margin-top: auto; /* Đẩy nút xuống cuối */
-  }
-  
+}
+
+.btn {
+    margin-top: auto;
+    /* Đẩy nút xuống cuối */
+}
+
+header,
+footer {
+    background-color: #425827;
+}
+
+.navbar-brand {
+    color: #f4f4dd;
+}
+
+.navbar {
+    background-color: #ffffff;
+}
