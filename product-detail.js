@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa", "Tỉnh táo"],
             advantage: ["Thư giãn tinh thần", "Thanh lọc cơ thể"],
             links: {
-                shopee: "#",
-                tiktok: "#",
-                lazada: "#"
+                shopee: "https://s.shopee.vn/6pmcEffmq2",
+                tiktok: "https://shop.tiktok.com/view/product/1731618971777599946?region=VN&locale=vi-VN",
+                lazada: "https://s.lazada.vn/s.5osqq"
             }
         },
         "2": {
@@ -20,9 +20,9 @@ document.addEventListener("DOMContentLoaded", function () {
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
             advantage: ["Thư giãn tinh thần", "Thanh lọc cơ thể"],
             links: {
-                shopee: "#",
-                tiktok: "#",
-                lazada: "#"
+                shopee: "https://s.shopee.vn/6V9lq5XNZY",
+                tiktok: "https://shop.tiktok.com/view/product/1731618962230839754?region=VN&locale=vi-VN",
+                lazada: "https://s.lazada.vn/s.5osqt"
             }
         },
         "3": {
@@ -31,9 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
             advantage: ["Thư giãn tinh thần", "Thanh lọc cơ thể"],
             links: {
-                shopee: "#",
-                tiktok: "#",
-                lazada: "#"
+                shopee: "https://s.shopee.vn/7KispdCTku",
+                tiktok: "https://shop.tiktok.com/view/product/1731618981069425098?region=VN&locale=vi-VN",
+                lazada: "https://s.lazada.vn/s.5osqw"
             }
         },
         "4": {
@@ -42,9 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
             advantage: ["Thư giãn tinh thần", "Thanh lọc cơ thể"],
             links: {
-                shopee: "#",
-                tiktok: "#",
-                lazada: "#"
+                shopee: "https://s.shopee.vn/30ZtfgstwB",
+                tiktok: "https://shop.tiktok.com/view/product/1731618963919440330?region=VN&locale=vi-VN",
+                lazada: "https://s.lazada.vn/s.5osqA"
             }
         },
         "5": {
@@ -53,9 +53,9 @@ document.addEventListener("DOMContentLoaded", function () {
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
             advantage: ["Thư giãn tinh thần", "Thanh lọc cơ thể"],
             links: {
-                shopee: "#",
-                tiktok: "#",
-                lazada: "#"
+                shopee: "https://s.shopee.vn/BFiIUq5IJ",
+                tiktok: "https://shop.tiktok.com/view/product/1731618957425674698?region=VN&locale=vi-VN",
+                lazada: "https://s.lazada.vn/s.5osJc"
             }
         },
         "6": {
@@ -64,9 +64,9 @@ document.addEventListener("DOMContentLoaded", function () {
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
             advantage: ["Thư giãn tinh thần", "Thanh lọc cơ thể"],
             links: {
-                shopee: "#",
-                tiktok: "#",
-                lazada: "#"
+                shopee: "https://s.shopee.vn/5KxoS0AMAE",
+                tiktok: "https://shop.tiktok.com/view/product/1731618970285869514?region=VN&locale=vi-VN",
+                lazada: "https://s.lazada.vn/s.5osJW"
             }
         },
         "7": {
@@ -75,9 +75,9 @@ document.addEventListener("DOMContentLoaded", function () {
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
             advantage: ["Thư giãn tinh thần", "Thanh lọc cơ thể"],
             links: {
-                shopee: "#",
-                tiktok: "#",
-                lazada: "#"
+                shopee: "https://s.shopee.vn/5faeqcrUsy",
+                tiktok: "https://shop.tiktok.com/view/product/1731618971880622538?region=VN&locale=vi-VN",
+                lazada: "https://s.lazada.vn/s.5osJg"
             }
         },
         "8": {
@@ -86,9 +86,9 @@ document.addEventListener("DOMContentLoaded", function () {
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
             advantage: ["Thư giãn tinh thần", "Thanh lọc cơ thể"],
             links: {
-                shopee: "#",
-                tiktok: "#",
-                lazada: "#"
+                shopee: "https://s.shopee.vn/6fTC2ThiZU",
+                tiktok: "https://shop.tiktok.com/view/product/1731618968313956810?region=VN&locale=vi-VN",
+                lazada: "https://s.lazada.vn/s.5osJ7"
             }
         }
     };
