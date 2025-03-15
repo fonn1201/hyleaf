@@ -4,8 +4,85 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const products = {
         "1": {
-            title: "Trà Oolong Thượng Hạng",
-            images: ["../src/logo.png", "../src/logo.png", "../src/logo.png"],
+            title: "Trà Oolong Tứ Quý",
+            images: ["../src/oolongtuquy.png", "../src/giaychungnhanVSATTP.png"],
+            benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
+            advantage: "Giúp thanh lọc cơ thể",
+            links: {
+                shopee: "#",
+                tiktok: "#",
+                lazada: "#"
+            }
+        },
+        "1": {
+            title: "Trà Oolong Thiết Quan Âm",
+            images: ["../src/oolongthietquanam.png", "../src/giaychungnhanVSATTP.png"],
+            benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
+            advantage: "Giúp thanh lọc cơ thể",
+            links: {
+                shopee: "#",
+                tiktok: "#",
+                lazada: "#"
+            }
+        },
+        "1": {
+            title: "Trà Oolong Kim Tuyên",
+            images: ["../src/oolongkimtuyen.png", "../src/giaychungnhanVSATTP.png"],
+            benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
+            advantage: "Giúp thanh lọc cơ thể",
+            links: {
+                shopee: "#",
+                tiktok: "#",
+                lazada: "#"
+            }
+        },
+        "1": {
+            title: "Trà Oolong Hương Lài (Nhài)",
+            images: ["../src/oolonghuonglai.png", "../src/giaychungnhanVSATTP.png"],
+            benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
+            advantage: "Giúp thanh lọc cơ thể",
+            links: {
+                shopee: "#",
+                tiktok: "#",
+                lazada: "#"
+            }
+        },
+        "1": {
+            title: "Trà Oolong Nguyên Lá",
+            images: ["../src/oolongnguyenla.png", "../src/giaychungnhanVSATTP.png"],
+            benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
+            advantage: "Giúp thanh lọc cơ thể",
+            links: {
+                shopee: "#",
+                tiktok: "#",
+                lazada: "#"
+            }
+        },
+        "1": {
+            title: "Trà Oolong Nguyên Vị",
+            images: ["../src/oolongnguyenvi.png", "../src/giaychungnhanVSATTP.png"],
+            benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
+            advantage: "Giúp thanh lọc cơ thể",
+            links: {
+                shopee: "#",
+                tiktok: "#",
+                lazada: "#"
+            }
+        },
+        "1": {
+            title: "Trà Xanh Lài Đặc Biệt",
+            images: ["../src/xanhlaidacbiet.png", "../src/giaychungnhanVSATTP.png"],
+            benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
+            advantage: "Giúp thanh lọc cơ thể",
+            links: {
+                shopee: "#",
+                tiktok: "#",
+                lazada: "#"
+            }
+        },
+        "1": {
+            title: "Trà Đen B'Lao",
+            images: ["../src/denblao.png", "../src/giaychungnhanVSATTP.png"],
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
             advantage: "Giúp thanh lọc cơ thể",
             links: {
