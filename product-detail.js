@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "1": {
             title: "Trà Oolong Tứ Quý",
             images: ["../src/oolongtuquy.png", "../src/giaychungnhanVSATTP.png"],
-            benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
-            advantage: "Giúp thanh lọc cơ thể",
+            benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa","Tỉnh táo"],
+            advantage: ["Thư giãn tinh thần", "Thanh lọc cơ thể"],
             links: {
                 shopee: "#",
                 tiktok: "#",
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "Trà Oolong Thiết Quan Âm",
             images: ["../src/oolongthietquanam.png", "../src/giaychungnhanVSATTP.png"],
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
-            advantage: "Giúp thanh lọc cơ thể",
+            advantage: ["Thư giãn tinh thần", "Thanh lọc cơ thể"],
             links: {
                 shopee: "#",
                 tiktok: "#",
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "Trà Oolong Hương Lài (Nhài)",
             images: ["../src/oolonghuonglai.png", "../src/giaychungnhanVSATTP.png"],
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
-            advantage: "Giúp thanh lọc cơ thể",
+            advantage: ["Thư giãn tinh thần", "Thanh lọc cơ thể"],
             links: {
                 shopee: "#",
                 tiktok: "#",
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "Trà Oolong Nguyên Lá",
             images: ["../src/oolongnguyenla.png", "../src/giaychungnhanVSATTP.png"],
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
-            advantage: "Giúp thanh lọc cơ thể",
+            advantage: ["Thư giãn tinh thần", "Thanh lọc cơ thể"],
             links: {
                 shopee: "#",
                 tiktok: "#",
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "Trà Oolong Nguyên Vị",
             images: ["../src/oolongnguyenvi.png", "../src/giaychungnhanVSATTP.png"],
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
-            advantage: "Giúp thanh lọc cơ thể",
+            advantage: ["Thư giãn tinh thần", "Thanh lọc cơ thể"],
             links: {
                 shopee: "#",
                 tiktok: "#",
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "Trà Xanh Lài Đặc Biệt",
             images: ["../src/xanhlaidacbiet.png", "../src/giaychungnhanVSATTP.png"],
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
-            advantage: "Giúp thanh lọc cơ thể",
+            advantage: ["Thư giãn tinh thần", "Thanh lọc cơ thể"],
             links: {
                 shopee: "#",
                 tiktok: "#",
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "Trà Đen B'Lao",
             images: ["../src/denblao.png", "../src/giaychungnhanVSATTP.png"],
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
-            advantage: "Giúp thanh lọc cơ thể",
+            advantage: ["Thư giãn tinh thần", "Thanh lọc cơ thể"],
             links: {
                 shopee: "#",
                 tiktok: "#",
@@ -106,7 +106,8 @@ document.addEventListener("DOMContentLoaded", function () {
         benefitsList.innerHTML = product.benefits.map(benefit => `<li>${benefit}</li>`).join("");
 
         // Cập nhật lợi ích
-        document.getElementById("product-advantage").textContent = product.advantage;
+        const advantegeList = document.getElementById("product-advantage");
+        benefitsList.innerHTML = product.benefits.map(advantage => `<li>${advantegeList}</li>`).join("");
 
         // Cập nhật liên kết
         document.getElementById("shopee-link").href = product.links.shopee;
