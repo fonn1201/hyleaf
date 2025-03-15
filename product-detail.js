@@ -119,14 +119,30 @@ document.addEventListener("DOMContentLoaded", function () {
         // Hiển thị các hình ảnh thumbnail
         let currentImageIndex = 0;
         const thumbnailsContainer = document.getElementById("thumbnail-container");
+
         product.images.forEach((img, index) => {
             const imgElement = document.createElement("img");
             imgElement.src = img;
             imgElement.classList.add("thumbnail");
+
+            // Thêm class 'active' cho hình ảnh đầu tiên
+            if (index === 0) {
+                imgElement.classList.add("active");
+            }
+
             imgElement.addEventListener("click", () => {
                 currentImageIndex = index;
                 mainImage.src = img;
+
+                // Xóa class 'active' khỏi tất cả các thumbnail
+                document.querySelectorAll(".thumbnail").forEach(thumb => {
+                    thumb.classList.remove("active");
+                });
+
+                // Thêm class 'active' cho thumbnail đang được chọn
+                imgElement.classList.add("active");
             });
+
             thumbnailsContainer.appendChild(imgElement);
         });
 
