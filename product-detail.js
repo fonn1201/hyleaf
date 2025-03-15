@@ -104,7 +104,8 @@ document.addEventListener("DOMContentLoaded", function () {
         benefitsList.innerHTML = product.benefits.map(benefit => `<li>${benefit}</li>`).join("");
 
         // Cập nhật lợi ích
-        document.getElementById("product-advantage").textContent = product.advantage;
+        const advantageList = document.getElementById("product-advantage");
+        advantageList.innerHTML = product.benefits.map(advantage => `<li>${advantage}</li>`).join("");
 
         // Cập nhật link mua hàng
         document.getElementById("shopee-link").href = product.links.shopee;
