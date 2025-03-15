@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const products = {
         "1": {
             title: "Trà Oolong Tứ Quý",
-            images: ["../src/oolongtuquy.png", "../src/giaychungnhanVSATTP.png"],
+            images: ["src/oolongtuquy.png", "src/giaychungnhanVSATTP.png"],
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa", "Tỉnh táo"],
             advantage: ["Thư giãn tinh thần", "Thanh lọc cơ thể"],
             links: {
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         "2": {
             title: "Trà Oolong Thiết Quan Âm",
-            images: ["../src/oolongthietquanam.png", "../src/giaychungnhanVSATTP.png"],
+            images: ["src/oolongthietquanam.png", "src/giaychungnhanVSATTP.png"],
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
             advantage: ["Thư giãn tinh thần", "Thanh lọc cơ thể"],
             links: {
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         "3": {
             title: "Trà Oolong Kim Tuyên",
-            images: ["../src/oolongkimtuyen.png", "../src/giaychungnhanVSATTP.png"],
+            images: ["src/oolongkimtuyen.png", "src/giaychungnhanVSATTP.png"],
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
             advantage: ["Thư giãn tinh thần", "Thanh lọc cơ thể"],
             links: {
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         "4": {
             title: "Trà Oolong Hương Lài (Nhài)",
-            images: ["../src/oolonghuonglai.png", "../src/giaychungnhanVSATTP.png"],
+            images: ["src/oolonghuonglai.png", "src/giaychungnhanVSATTP.png"],
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
             advantage: ["Thư giãn tinh thần", "Thanh lọc cơ thể"],
             links: {
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         "5": {
             title: "Trà Oolong Nguyên Lá",
-            images: ["../src/oolongnguyenla.png", "../src/giaychungnhanVSATTP.png"],
+            images: ["src/oolongnguyenla.png", "src/giaychungnhanVSATTP.png"],
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
             advantage: ["Thư giãn tinh thần", "Thanh lọc cơ thể"],
             links: {
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         "6": {
             title: "Trà Oolong Nguyên Vị",
-            images: ["../src/oolongnguyenvi.png", "../src/giaychungnhanVSATTP.png"],
+            images: ["src/oolongnguyenvi.png", "src/giaychungnhanVSATTP.png"],
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
             advantage: ["Thư giãn tinh thần", "Thanh lọc cơ thể"],
             links: {
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         "7": {
             title: "Trà Xanh Lài Đặc Biệt",
-            images: ["../src/xanhlaidacbiet.png", "../src/giaychungnhanVSATTP.png"],
+            images: ["src/xanhlaidacbiet.png", "src/giaychungnhanVSATTP.png"],
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
             advantage: ["Thư giãn tinh thần", "Thanh lọc cơ thể"],
             links: {
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         "8": {
             title: "Trà Đen B'Lao",
-            images: ["../src/denblao.png", "../src/giaychungnhanVSATTP.png"],
+            images: ["src/denblao.png", "src/giaychungnhanVSATTP.png"],
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
             advantage: ["Thư giãn tinh thần", "Thanh lọc cơ thể"],
             links: {
