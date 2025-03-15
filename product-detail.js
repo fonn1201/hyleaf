@@ -95,80 +95,73 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (products[productId]) {
         const product = products[productId];
-
-        // Cập nhật tiêu đề
-        document.getElementById("product-title").textContent = product.title;
-
-        // Cập nhật hình ảnh chính
         const mainImage = document.getElementById("product-image");
-        mainImage.src = product.images[0];
-
-        // Cập nhật công dụng
         const benefitsList = document.getElementById("product-benefits");
-        benefitsList.innerHTML = product.benefits.map(benefit => `<li>${benefit}</li>`).join("");
-
-        // Cập nhật lợi ích
         const advantageList = document.getElementById("product-advantage");
-        advantageList.innerHTML = product.advantage.map(adv => `<li>${adv}</li>`).join("");
+        const thumbnailsContainer = document.getElementById("thumbnail-container");
 
-        // Cập nhật liên kết mua hàng
+        // Cập nhật thông tin sản phẩm
+        document.getElementById("product-title").textContent = product.title;
+        mainImage.src = product.images[0];
+        benefitsList.innerHTML = product.benefits.map(benefit => `<li>${benefit}</li>`).join("");
+        advantageList.innerHTML = product.advantage.map(adv => `<li>${adv}</li>`).join("");
         document.getElementById("shopee-link").href = product.links.shopee;
         document.getElementById("tiktok-link").href = product.links.tiktok;
         document.getElementById("lazada-link").href = product.links.lazada;
 
-        // Hiển thị các hình ảnh thumbnail
         let currentImageIndex = 0;
-        const thumbnailsContainer = document.getElementById("thumbnail-container");
 
+        // Hiển thị thumbnail và thêm class 'active' cho hình đầu tiên
         product.images.forEach((img, index) => {
             const imgElement = document.createElement("img");
             imgElement.src = img;
             imgElement.classList.add("thumbnail");
-
-            // Thêm class 'active' cho hình ảnh đầu tiên
-            if (index === 0) {
-                imgElement.classList.add("active");
-            }
-
+            if (index === 0) imgElement.classList.add("active");
             imgElement.addEventListener("click", () => {
+                updateActiveThumbnail(index);
                 currentImageIndex = index;
                 mainImage.src = img;
-
-                // Xóa class 'active' khỏi tất cả các thumbnail
-                document.querySelectorAll(".thumbnail").forEach(thumb => {
-                    thumb.classList.remove("active");
-                });
-
-                // Thêm class 'active' cho thumbnail đang được chọn
-                imgElement.classList.add("active");
             });
-
             thumbnailsContainer.appendChild(imgElement);
         });
 
-        // Xử lý chuyển đổi hình ảnh
+        // Xử lý nút chuyển ảnh
         document.getElementById("prev-btn").addEventListener("click", () => {
             currentImageIndex = (currentImageIndex === 0) ? product.images.length - 1 : currentImageIndex - 1;
-            mainImage.src = product.images[currentImageIndex];
+            updateMainImage();
         });
 
         document.getElementById("next-btn").addEventListener("click", () => {
             currentImageIndex = (currentImageIndex === product.images.length - 1) ? 0 : currentImageIndex + 1;
-            mainImage.src = product.images[currentImageIndex];
+            updateMainImage();
         });
 
-        // Toggle collapse/extend cho Công dụng
+        // Hàm cập nhật hình ảnh chính và thumbnail active
+        function updateMainImage() {
+            mainImage.src = product.images[currentImageIndex];
+            updateActiveThumbnail(currentImageIndex);
+        }
+
+        // Hàm cập nhật class 'active' cho thumbnail đang hoạt động
+        function updateActiveThumbnail(index) {
+            const thumbnails = document.querySelectorAll(".thumbnail");
+            thumbnails.forEach(thumb => thumb.classList.remove("active"));
+            thumbnails[index].classList.add("active");
+        }
+
+        // Toggle collapse cho Công dụng
         document.getElementById("toggle-benefits").addEventListener("click", function () {
             benefitsList.classList.toggle("show");
             this.textContent = benefitsList.classList.contains("show") ? "▼ Thu gọn" : "▶ Xem thêm";
         });
 
-        // Toggle collapse/extend cho Lợi ích
+        // Toggle collapse cho Lợi ích
         document.getElementById("toggle-advantage").addEventListener("click", function () {
             advantageList.classList.toggle("show");
             this.textContent = advantageList.classList.contains("show") ? "▼ Thu gọn" : "▶ Xem thêm";
         });
+
     } else {
         document.querySelector("main").innerHTML = "<h1 class='text-center'>Sản phẩm không tồn tại</h1>";
     }
-})
+});
