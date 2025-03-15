@@ -49,30 +49,35 @@ body {
 }
 
 /* Màu nền cho header và footer */
-header, footer {
+header,
+footer {
     background-color: #425827;
-  }
-  
-  /* Màu chữ cho tên thương hiệu */
-  .navbar-brand {
+}
+
+/* Màu chữ cho tên thương hiệu */
+.navbar-brand {
     color: #f4f4dd;
     font-weight: bold;
     font-size: 24px;
-  }
-  
-  /* Màu cho các link trong navbar */
-  .navbar-nav .nav-link {
+}
+
+/* Khi hover */
+.navbar-brand:hover {
+    color: #f4f4dd;
+}
+
+/* Màu cho các link trong navbar */
+.navbar-nav .nav-link {
     color: #ffffff;
     margin-left: 15px;
-  }
-  
-  /* Khi hover */
-  .navbar-nav .nav-link:hover {
+}
+
+/* Khi hover */
+.navbar-nav .nav-link:hover {
     color: #f4f4dd;
-  }
-  
-  /* Footer */
-  footer {
+}
+
+/* Footer */
+footer {
     color: #f4f4dd;
-  }
-  
+}
