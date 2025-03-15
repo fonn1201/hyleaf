@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 lazada: "#"
             }
         },
-        "1": {
+        "2": {
             title: "Trà Oolong Thiết Quan Âm",
             images: ["../src/oolongthietquanam.png", "../src/giaychungnhanVSATTP.png"],
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 lazada: "#"
             }
         },
-        "1": {
+        "3": {
             title: "Trà Oolong Kim Tuyên",
             images: ["../src/oolongkimtuyen.png", "../src/giaychungnhanVSATTP.png"],
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 lazada: "#"
             }
         },
-        "1": {
+        "4": {
             title: "Trà Oolong Hương Lài (Nhài)",
             images: ["../src/oolonghuonglai.png", "../src/giaychungnhanVSATTP.png"],
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 lazada: "#"
             }
         },
-        "1": {
+        "5": {
             title: "Trà Oolong Nguyên Lá",
             images: ["../src/oolongnguyenla.png", "../src/giaychungnhanVSATTP.png"],
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 lazada: "#"
             }
         },
-        "1": {
+        "6": {
             title: "Trà Oolong Nguyên Vị",
             images: ["../src/oolongnguyenvi.png", "../src/giaychungnhanVSATTP.png"],
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 lazada: "#"
             }
         },
-        "1": {
+        "7": {
             title: "Trà Xanh Lài Đặc Biệt",
             images: ["../src/xanhlaidacbiet.png", "../src/giaychungnhanVSATTP.png"],
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 lazada: "#"
             }
         },
-        "1": {
+        "8": {
             title: "Trà Đen B'Lao",
             images: ["../src/denblao.png", "../src/giaychungnhanVSATTP.png"],
             benefits: ["Thư giãn tinh thần", "Hỗ trợ tiêu hóa"],
