@@ -6,32 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
     loadComponent("header", `${basePath}/components/header.html`);
     loadComponent("footer", `${basePath}/components/footer.html`);
 
-    // Load head
-    fetch(`${basePath}/components/head.html`)
-        .then(response => {
-            if (!response.ok) throw new Error('Không tìm thấy head.html');
-            return response.text();
-        })
-        .then(data => {
-            const tempContainer = document.createElement('div');
-            tempContainer.innerHTML = data;
-
-            // Lấy tất cả thẻ meta, link, title từ head.html
-            const headElements = tempContainer.querySelectorAll('meta, link, title');
-
-            headElements.forEach(el => {
-                const existingElement = document.head.querySelector(`${el.tagName.toLowerCase()}[${el.attributes[0]?.name}="${el.attributes[0]?.value}"]`);
-                if (!existingElement) {
-                    document.head.appendChild(el);
-                }
-            });
-
-            // Đặt title động từ data-title trong body
-            const pageTitle = document.body.dataset.title || "Hyleaf";
-            document.title = pageTitle;
-        })
-        .catch(error => console.error('Error loading head:', error));
-
     // Loại bỏ .html khỏi URL
     removeHtmlExtension();
 });
