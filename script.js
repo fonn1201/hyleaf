@@ -1,25 +1,41 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Load Header
-    fetch("components/header.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("header").innerHTML = data;
-        });
+    // Xác định đường dẫn gốc
+    const basePath = window.location.pathname.includes("/pages/") ? ".." : ".";
 
-    // Load Footer
-    fetch("components/footer.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("footer").innerHTML = data;
-        });
+    // Load Header và Footer
+    loadComponent("header", `${basePath}/components/header.html`);
+    loadComponent("footer", `${basePath}/components/footer.html`);
 
-    // Load nội dung trang theo URL
-    const path = window.location.pathname.replace(/^\/+|\/+$/g, '') || "index";
-    fetch("pages/" + path + ".html")
+    // Xử lý nội dung trang
+    let path = window.location.pathname.replace(/\/+$/, '') || "/index";
+    path = path === "/" ? "index" : path.replace(/^\//, '');
+
+    fetchPageContent(path);
+
+    // Loại bỏ .html khỏi URL hiển thị
+    removeHtmlExtension();
+});
+
+// Hàm tải header và footer
+function loadComponent(id, url) {
+    fetch(url)
         .then(response => {
-            if (!response.ok) {
-                throw new Error("Trang không tồn tại!");
-            }
+            if (!response.ok) throw new Error(`Không tìm thấy ${url}`);
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById(id).innerHTML = data;
+        })
+        .catch(error => console.error(error));
+}
+
+// Hàm load nội dung trang
+function fetchPageContent(page) {
+    const url = `pages/${page}.html`;
+
+    fetch(url)
+        .then(response => {
+            if (!response.ok) throw new Error("Trang không tồn tại!");
             return response.text();
         })
         .then(data => {
@@ -28,28 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch(() => {
             document.getElementById("content").innerHTML = "<h2>Trang không tồn tại</h2>";
         });
-});
-
-// Hàm tải header/footer từ đúng thư mục
-function loadComponent(id, url) {
-    fetch(url)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Không tìm thấy " + url);
-            }
-            return response.text();
-        })
-        .then(data => {
-            // Giữ nguyên class của phần tử cha (đặc biệt là header)
-            const container = document.getElementById(id);
-            const temp = document.createElement("div");
-            temp.innerHTML = data;
-
-            while (temp.firstChild) {
-                container.appendChild(temp.firstChild);
-            }
-        })
-        .catch(error => console.warn(error));
 }
 
 // Hàm loại bỏ .html khỏi URL hiển thị
@@ -57,7 +51,7 @@ function removeHtmlExtension() {
     let path = window.location.pathname;
 
     if (path.endsWith(".html")) {
-        let newPath = path.replace(".html", "");
+        const newPath = path.replace(".html", "");
         history.replaceState(null, "", newPath);
     }
 }
