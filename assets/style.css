@@ -106,7 +106,6 @@ footer {
 main {
     flex: 1; /* Cho phép nội dung chính mở rộng để đẩy footer xuống */
     padding-bottom: 60px;
-    
 }
 
 /* Hình ảnh chính */
