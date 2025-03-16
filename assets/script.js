@@ -1,19 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Xác định đường dẫn gốc
-    const basePath = window.location.pathname.includes("/pages/") ? ".." : ".";
+    const currentPath = window.location.pathname;
+    const basePath = currentPath.includes("/pages/") ? ".." : ".";
 
-    // Load Header và Footer
+    // Load header và footer
     loadComponent("header", `${basePath}/components/header.html`);
     loadComponent("footer", `${basePath}/components/footer.html`);
-
-    // Xử lý nội dung trang
-    let path = window.location.pathname.replace(/\/+$/, '') || "/index";
-    path = path === "/" ? "index" : path.replace(/^\//, '');
-
-    fetchPageContent(path);
-
-    // Loại bỏ .html khỏi URL hiển thị
-    removeHtmlExtension();
 });
 
 // Hàm tải header và footer
@@ -48,10 +39,9 @@ function fetchPageContent(page) {
 
 // Hàm loại bỏ .html khỏi URL hiển thị
 function removeHtmlExtension() {
-    let path = window.location.pathname;
-
-    if (path.endsWith(".html")) {
-        const newPath = path.replace(".html", "");
-        history.replaceState(null, "", newPath);
+    const url = window.location.pathname;
+    if (url.endsWith(".html")) {
+        const newUrl = url.replace(".html", "");
+        window.history.replaceState({}, document.title, newUrl);
     }
 }

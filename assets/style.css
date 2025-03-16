@@ -118,7 +118,7 @@ main {
     margin: 5px;
     cursor: pointer;
     border: 2px solid transparent;
-    transition: border-color 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .thumbnail:hover, .thumbnail.active {
