@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Xác định đường dẫn chính xác của header và footer
     let basePath = window.location.pathname.includes("/pages/") ? ".." : ".";
 
+    // Tải nội dung header và footer
     loadComponent("header", `${basePath}/pages/header.html`);
     loadComponent("footer", `${basePath}/pages/footer.html`);
 
@@ -19,7 +20,14 @@ function loadComponent(id, url) {
             return response.text();
         })
         .then(data => {
-            document.getElementById(id).innerHTML = data;
+            // Giữ nguyên class của phần tử cha (đặc biệt là header)
+            const container = document.getElementById(id);
+            const temp = document.createElement("div");
+            temp.innerHTML = data;
+
+            while (temp.firstChild) {
+                container.appendChild(temp.firstChild);
+            }
         })
         .catch(error => console.warn(error));
 }
