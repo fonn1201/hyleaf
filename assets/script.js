@@ -13,7 +13,19 @@ document.addEventListener("DOMContentLoaded", () => {
             return response.text();
         })
         .then(data => {
-            document.head.innerHTML = data;
+            const tempContainer = document.createElement('div');
+            tempContainer.innerHTML = data;
+
+            // Lấy tất cả thẻ meta, link, title từ head.html
+            const headElements = tempContainer.querySelectorAll('meta, link, title');
+
+            headElements.forEach(el => {
+                const existingElement = document.head.querySelector(`${el.tagName.toLowerCase()}[${el.attributes[0]?.name}="${el.attributes[0]?.value}"]`);
+                if (!existingElement) {
+                    document.head.appendChild(el);
+                }
+            });
+
             // Đặt title động từ data-title trong body
             const pageTitle = document.body.dataset.title || "Hyleaf";
             document.title = pageTitle;
@@ -23,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Loại bỏ .html khỏi URL
     removeHtmlExtension();
 });
+
 
 // Hàm tải header và footer
 function loadComponent(id, url) {
