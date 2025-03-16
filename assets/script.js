@@ -37,12 +37,17 @@ function fetchPageContent(page) {
         });
 }
 
+
 // Hàm loại bỏ .html khỏi URL hiển thị
 function removeHtmlExtension() {
     let path = window.location.pathname;
 
-    if (path.endsWith(".html")) {
-        const newPath = path.replace(".html", "");
-        history.replaceState(null, "", newPath);
+    // Kiểm tra xem đường dẫn có chứa ".html" hay không
+    if (path.includes(".html")) {
+        const newPath = path.replace(/\.html$/, ""); // Thay thế phần cuối là .html
+        window.history.replaceState(null, "", newPath); // Thay đổi URL mà không cần reload trang
     }
 }
+
+// Gọi hàm khi trang được load
+document.addEventListener("DOMContentLoaded", removeHtmlExtension);
