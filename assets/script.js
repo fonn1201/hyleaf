@@ -7,10 +7,16 @@ document.addEventListener("DOMContentLoaded", () => {
     loadComponent("footer", `${basePath}/components/footer.html`);
 
     // Load head
-    fetch("components/head.html")
-        .then(response => response.text())
+    fetch(`${basePath}/components/head.html`)
+        .then(response => {
+            if (!response.ok) throw new Error('Không tìm thấy head.html');
+            return response.text();
+        })
         .then(data => {
-            document.getElementById("head-content").innerHTML = data;
+            document.head.innerHTML = data;
+            // Đặt title động từ data-title trong body
+            const pageTitle = document.body.dataset.title || "Hyleaf";
+            document.title = pageTitle;
         })
         .catch(error => console.error('Error loading head:', error));
 
