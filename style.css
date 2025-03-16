@@ -5,6 +5,7 @@ body {
     flex-direction: column;
     font-family: Arial, sans-serif;
     background-color: #f4f4dd;
+    padding-top: 60px;
 }
 
 /* Navbar */
