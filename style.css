@@ -1,11 +1,19 @@
 /* Tổng quan */
 body {
+    min-height: 100vh; /* Chiều cao tối thiểu là 100% chiều cao của viewport */
+    display: flex;
+    flex-direction: column;
     font-family: Arial, sans-serif;
     background-color: #f4f4dd;
 }
 
 /* Navbar */
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
     background-color: #425827;
 }
 
@@ -86,6 +94,10 @@ header {
 footer {
     background-color: #425827;
     color: #f4f4dd;
+}
+
+main {
+    flex: 1; /* Cho phép nội dung chính mở rộng để đẩy footer xuống */
 }
 
 /* Hình ảnh chính */
