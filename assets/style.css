@@ -1,9 +1,9 @@
 /* Tổng quan */
 body {
+    font-family: 'Saira', sans-serif;
     min-height: 100vh; /* Chiều cao tối thiểu là 100% chiều cao của viewport */
     display: flex;
     flex-direction: column;
-    font-family: Arial, sans-serif;
     background-color: #f4f4dd;
     padding-top: 60px;
 }
