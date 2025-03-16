@@ -1,10 +1,21 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
     const currentPath = window.location.pathname;
     const basePath = currentPath.includes("/pages/") ? ".." : ".";
 
-    // Load header và footer
+    // Load các thành phần chung
     loadComponent("header", `${basePath}/components/header.html`);
     loadComponent("footer", `${basePath}/components/footer.html`);
+
+    // Load head
+    fetch("components/head.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("head-content").innerHTML = data;
+        })
+        .catch(error => console.error('Error loading head:', error));
+
+    // Loại bỏ .html khỏi URL
+    removeHtmlExtension();
 });
 
 // Hàm tải header và footer
@@ -37,17 +48,12 @@ function fetchPageContent(page) {
         });
 }
 
-
 // Hàm loại bỏ .html khỏi URL hiển thị
 function removeHtmlExtension() {
     let path = window.location.pathname;
 
-    // Kiểm tra xem đường dẫn có chứa ".html" hay không
     if (path.includes(".html")) {
-        const newPath = path.replace(/\.html$/, ""); // Thay thế phần cuối là .html
-        window.history.replaceState(null, "", newPath); // Thay đổi URL mà không cần reload trang
+        const newPath = path.replace(/\.html$/, ""); 
+        window.history.replaceState(null, "", newPath);
     }
 }
-
-// Gọi hàm khi trang được load
-document.addEventListener("DOMContentLoaded", removeHtmlExtension);
