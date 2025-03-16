@@ -100,11 +100,12 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    padding-top: 60px;
+    text-align: center;
 }
 
 main {
     flex: 1; /* Cho phép nội dung chính mở rộng để đẩy footer xuống */
+    padding-bottom: 60px;
     
 }
 
