@@ -1,12 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Xác định đường dẫn chính xác của header và footer
-    let basePath = window.location.pathname.includes("/pages/") ? ".." : ".";
+    // Kiểm tra nếu đang ở trang index.html
+    const isIndexPage = window.location.pathname === "/" || window.location.pathname === "/index";
+    
+    // Xác định đường dẫn base phù hợp
+    const basePath = isIndexPage ? "." : "..";
 
-    // Tải nội dung header và footer
+    // Tải header và footer
     loadComponent("header", `${basePath}/pages/header.html`);
     loadComponent("footer", `${basePath}/pages/footer.html`);
 
-    // Xử lý URL để bỏ .html
+    // Xử lý URL bỏ .html
     removeHtmlExtension();
 });
 
