@@ -152,13 +152,13 @@ document.addEventListener("DOMContentLoaded", function () {
         // Toggle collapse cho Công dụng
         document.getElementById("toggle-benefits").addEventListener("click", function () {
             benefitsList.classList.toggle("show");
-            this.textContent = benefitsList.classList.contains("show") ? "▼ Thu gọn" : "▶ Xem thêm";
+            this.textContent = benefitsList.classList.contains("show") ? "▼" : "▶";
         });
 
         // Toggle collapse cho Lợi ích
         document.getElementById("toggle-advantage").addEventListener("click", function () {
             advantageList.classList.toggle("show");
-            this.textContent = advantageList.classList.contains("show") ? "▼ Thu gọn" : "▶ Xem thêm";
+            this.textContent = advantageList.classList.contains("show") ? "▼" : "▶";
         });
 
     } else {
