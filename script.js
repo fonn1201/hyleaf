@@ -1,16 +1,33 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Kiểm tra nếu đang ở trang index.html
-    const isIndexPage = window.location.pathname === "/" || window.location.pathname === "/index";
-    
-    // Xác định đường dẫn base phù hợp
-    const basePath = isIndexPage ? "." : "..";
+    // Load Header
+    fetch("components/header.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("header").innerHTML = data;
+        });
 
-    // Tải header và footer
-    loadComponent("header", `${basePath}/pages/header.html`);
-    loadComponent("footer", `${basePath}/pages/footer.html`);
+    // Load Footer
+    fetch("components/footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("footer").innerHTML = data;
+        });
 
-    // Xử lý URL bỏ .html
-    removeHtmlExtension();
+    // Load nội dung trang theo URL
+    const path = window.location.pathname.replace(/^\/+|\/+$/g, '') || "index";
+    fetch("pages/" + path + ".html")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Trang không tồn tại!");
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById("content").innerHTML = data;
+        })
+        .catch(() => {
+            document.getElementById("content").innerHTML = "<h2>Trang không tồn tại</h2>";
+        });
 });
 
 // Hàm tải header/footer từ đúng thư mục
