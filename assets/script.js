@@ -39,9 +39,10 @@ function fetchPageContent(page) {
 
 // Hàm loại bỏ .html khỏi URL hiển thị
 function removeHtmlExtension() {
-    const url = window.location.pathname;
-    if (url.endsWith(".html")) {
-        const newUrl = url.replace(".html", "");
-        window.history.replaceState({}, document.title, newUrl);
+    let path = window.location.pathname;
+
+    if (path.endsWith(".html")) {
+        const newPath = path.replace(".html", "");
+        history.replaceState(null, "", newPath);
     }
 }
