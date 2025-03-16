@@ -81,13 +81,13 @@ header {
 }
 
 /* Nút bấm */
-.btn {
+.btn-detail {
     margin-top: auto;
     color: #f4f4dd;
     background-color: #2c3d1e;
 }
 
-.btn:hover {
+.btn-detail:hover {
     color: #2c3d1e;
     background-color: #f4f4dd;
 }
